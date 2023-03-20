@@ -9,17 +9,16 @@
 
 <p th:text="${person.getFullName() + ', ' + person.getYearOfBirth()}">VALUE</p>
 <p th:text="${'Email: ' + person.getEmail()}">VALUE</p>
-<br/>
 
 <div th:if="${books.isEmpty()}">
     <p>The person hasn't taken the books yet</p>
-    </hr>
+    <hr/>
 </div>
 
 <div th:if="${!books.isEmpty()}">
-    </hr>
+    <hr/>
     <b>Books:</b>
-    </br>
+    <br/>
     <table th:each="book : ${books}">
         <tr>
             <td>
@@ -30,7 +29,7 @@
             </td>
         </tr>
     </table>
-    </hr>
+    <hr/>
 </div>
 
 <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">

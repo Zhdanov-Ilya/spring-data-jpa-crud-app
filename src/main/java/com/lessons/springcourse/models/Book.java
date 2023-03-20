@@ -1,9 +1,6 @@
 package com.lessons.springcourse.models;
 
-import jakarta.persistence.*;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotEmpty;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -16,17 +13,12 @@ public class Book {
     private int id;
 
     @Column(name = "title")
-    @NotEmpty(message = "Title should not be empty")
-    @Max(value = 200, message = "Title should be shorter then 200 characters")
     private String title;
 
     @Column(name = "author")
-    @NotEmpty(message = "Author should not be empty")
-    @Max(value = 100, message = "Author name should be shorter then 100 characters")
     private String author;
 
     @Column(name = "year_of_publication")
-    @NotEmpty(message = "Year of publication should not be empty")
     private int yearOfPublication;
 
     @ManyToOne
